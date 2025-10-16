@@ -1,1 +1,361 @@
-fh
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho Assist - Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .mTop {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .login-box {
+            max-width: 480px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .serviceLogo {
+            display: block;
+            margin: 30px auto 20px;
+            height: 50px;
+        }
+        
+        .signupTable {
+            width: 100%;
+            padding: 0 40px 30px;
+        }
+        
+        .accountAvailableDiv {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .accountAvailableDiv a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .accountAvailableDiv a:hover {
+            text-decoration: underline;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 3px;
+            font-size: 14px;
+            color: #333;
+            transition: all 0.2s;
+            background-color: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+        
+        select.form-input {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+        
+        .za-state-container-arrow {
+            position: relative;
+        }
+        
+        .za-state-select {
+            width: 100%;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-top: 3px;
+            margin-right: 8px;
+        }
+        
+        .checkbox-container label {
+            font-weight: 400;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .terms-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .terms-link:hover {
+            text-decoration: underline;
+        }
+        
+        .submitSignUp {
+            width: 100%;
+            padding: 12px 24px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+        
+        .submitSignUp:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .submitSignUp:disabled,
+        .diableBtnSignup {
+            background-color: #9db4d0;
+            cursor: not-allowed;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        #za_end_email {
+            display: none;
+        }
+        
+        .za-newsletter-container {
+            display: none;
+        }
+        
+        .optnbtnClass {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+        }
+        
+        .optnbtnClass input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        .optnbtnClass label {
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .login-box {
+                margin: 20px 15px;
+            }
+            
+            .signupTable {
+                padding: 0 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mTop">Start with your free account today!</div>
+    
+    <div class="login-box">
+        <div align="center">
+            <img class="serviceLogo" src="https://www.zoho.com/sites/zweb/images/productlogos/assist.png" alt="Zoho Assist">
+        </div>
+        
+        <table class="signupTable">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="accountAvailableDiv">
+                            You have logged in as ajay.m@d4aonline.com. Please 
+                            <a href="https://accounts.zoho.com/logout?servicename=ZohoPayments&serviceurl=/ResellerCustomerSignUp.do?id=04823951164ced2465197ab533f43f94">logout</a> 
+                            and try again.
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <form id="signupform" name="signupform">
+            <table class="signupTable">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="email">Email Address <span style="color: red;">*</span></label>
+                                <input type="email" class="form-input" id="email" name="email" placeholder="Email Address" required>
+                                <div id="za_end_email" style="margin-top: 10px;">
+                                    <label for="zs_end_email">End User Email</label>
+                                    <input type="email" class="form-input" id="zs_end_email" name="zs_end_email" placeholder="End User Email">
+                                    <div class="error-message end_field_msg">End user email is required</div>
+                                    <div class="error-message end_field_msg_sameemail">End user email cannot be same as email</div>
+                                    <div class="error-message end_field_msg_samedomain">End user email cannot be from same domain</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="company">Company Name <span style="color: red;">*</span></label>
+                                <input type="text" class="form-input" id="company" name="company" placeholder="Company Name" required>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="phone">Phone <span style="color: red;">*</span></label>
+                                <input type="tel" class="form-input" id="phone" name="phone" placeholder="Phone" required>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="country">Country <span style="color: red;">*</span></label>
+                                <select class="form-input" id="country" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="India" selected>India</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Japan">Japan</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="za-state-container">
+                        <td>
+                            <div class="form-group za-state-container-arrow">
+                                <label for="state">State <span style="color: red;">*</span></label>
+                                <select class="form-input za-state-select" id="state" name="x_state" required>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr id="signupplan">
+                    </tr>
+                    
+                    <tr class="za-newsletter-container">
+                        <td>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">
+                                    I'd like to receive marketing emails from Zoho about products, services, and events
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="signup-termservice" name="tos" required>
+                                <label for="signup-termservice">
+                                    I agree to the <a href="#" class="terms-link">Terms of Service</a> and 
+                                    <a href="#" class="terms-link">Privacy Policy</a>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <button type="submit" class="submitSignUp">GET STARTED</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <input type="hidden" value="04823951164ced2465197ab533f43f94" name="x_cid">
+            <input type="hidden" value="" name="x_gclid">
+            <input type="hidden" value="" name="x_pack">
+            <input type="hidden" value="" name="x_customerdiscount">
+            <input type="hidden" name="country">
+            <input type="hidden" name="language" value="en">
+            <input type="hidden" name="lastname">
+        </form>
+    </div>
+</body>
+</html>
